@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" as="font" type="font/ttf"
+          crossorigin="anonymous">
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="gebug-guling.css">
+</head>
+<body>
+<div id="root">
+    <div id="bag" v-bind:class="burstBagClass"></div>
+    <!--        bag guling-->
+    <div id="bag-health">
+        <div v-bind:style="{width: life + '%'}"></div>
+    </div>
+    <!--        indikator ketika dipukul-->
+    <div class="center-tombol">
+        <div id="controls">
+            <button v-on:click="gebuk()" v-if="!isEndGame">Gebug</button>
+            <button v-on:click="restart()" v-if="isEndGame">Ulangi</button>
+        </div>
+    </div>
+    <!--        game control guling-->
+    <div class="center-tombol" v-if="isEndGame">
+        <h3 class="fontClassKO">KO, game over, please try again!</h3>
+    </div>
+    <!--        bag guling ko-->
+    <div></div>
+</div>
+<script src="gebug-guling.js"></script>
+</body>
+</html>
